@@ -1,21 +1,37 @@
 import java.util.Scanner;
 public class LinearSearch06 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc01 = new Scanner(System.in);
 
-        int[] arrayInt = {34, 18, 26, 48, 72, 20, 56, 63};
-        int key = 20;
+        int[] nilaiKey = new int [10];
+        int jmlKey = 0;
         int hasil = 0;
+        int cari = 0;
 
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (arrayInt [i] == key) {
-                hasil = i;
-                break;
+        System.out.print("Masukkan jumlah elemen array :");
+        jmlKey = sc01.nextInt();
+
+        for (int i = 0; i < jmlKey; i++) {
+           System.out.print("Masukkan jumlah elemen array ke- "+(i+1)+" : ");
+                nilaiKey[i] = sc01.nextInt();
+            }
+
+            System.out.print("Masukkan key yang ingin dicari : ");
+            cari = sc01.nextInt();
+            for (int i = 0; i < jmlKey; i++) {
+                if (nilaiKey[i] == cari){
+                    hasil = i;
+                    System.out.println("Key ada di posisi ke- " +i);
+                    break;
+                }else{
+                    System.out.println("Key tidak ditemukan");
+                    break;
+                }
+
             }
         }
 
-        System.out.println("Key ada dalam array pada posisi indeks ke-"+hasil);
         
-    }
-    
 }
+    
+
